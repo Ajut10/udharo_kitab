@@ -1,64 +1,72 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-
-.container{
-    width:100%;
-    height: 100vh;
-    background-color: #f6f5f4;
-    position: relative;
-}
-.form-box{
-    width: 90%;
-    max-width: 550px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 50px 60px 70px;
-    text-align: center;
-    display: flex;
-    border: 0.1px solid grey;
-    border-radius: 20px ;
-
-}
-form{
-    width: 50%;
-    left: 0;
-    margin: 10px;
-}
-.gobi{
-    width: 50%;
-    left:0;
-    align-items: center;
-    background: #8964f1;
-    margin: 5px;
-    justify-content: center;
-
-}
-.lu{
-    color: #fff;
-    background-size: cover;
-    align-items: center;
-    text-align: center;
-    top: 70%;
+h1{
+  font-size: 34px;
 
 }
 
-input{
-    width: 100%;
-    background: #eee;
-    border: none;
-    font-size: 16px;
-    margin: 8px;
-    /* outline:0; */
-    padding: 10px 10px;
-
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f5f4;
+  position: relative;
+  display: grid;
+}
+.form-box {
+  width: 90%;
+  max-width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 50px 60px 70px;
+  text-align: center;
+  /* display: flex; */
+  border: 0.1px solid grey;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px;
+}
+form {
+  width: 90%;
+  left: 0;
+  margin: 10px;
 }
 
+button {
+  background: rgb(2, 0, 36);
+  /* background-size: cover; */
+  color: #fff;
+  padding: 18px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  margin: 4%;
+  
+  
+  background-image: linear-gradient(
+    to left bottom,
+    #3c649d,
+    #0081b1,
+    #009baf,
+    #00b19b,
+    #69c37f
+  );
+}
 
+input {
+  width: 100%;
+  background: #eee;
+  border: none;
+  font-size: 16px;
+  margin: 8px;
+  /* outline:0; */
+  padding: 10px 10px;
+}

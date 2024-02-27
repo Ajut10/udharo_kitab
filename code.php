@@ -31,7 +31,7 @@ function  sendmail_verify($name,$email,$verify_token){
     <h2>you have registered with udharo kitab</h2>
     <h5>verify your email address to login with the below link</h5>
     <br/><br/>
-    <a href='http://localhost/Udharo_kitab/verify_email.php?token=$verify_token'> click Me</a>";
+    <a href='http://localhost/Udharo_kitab/verify_email.php?token=$verify_token'> Click Me</a>";
 
     $mail->Body =$email_template;
     $mail->send();

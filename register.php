@@ -9,28 +9,31 @@ include ('database/database.php');
 
 <!-- register html code -->
 <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
 <div class="container">
-    <div class="alert">
-        <span id="alert1"></span>
-        <?php
-        if(isset($_SESSION['status'])){
-            echo "<h4>".$_SESSION['status']."</h4>";
-            unset($_SESSION['status']);
-
-        }
-        ?>
-    </div>
     <div class="form-box">
-
+        <h1>Register</h1>
+        
         <form action="code.php" method="post" onsubmit="return validation()" novalidate>
             
-            <div class="input-group">
-                <div class="input-field">
-
-                    
-                    <input type="text" name="name" id="name" autocomplete="off" placeholder="Name" >
+        <div class="input-group">
+            <div class="input-field">
+                
+                
+                <input type="text" name="name" id="name" autocomplete="off" placeholder="Name" >
+                <div class="alert">
+                    <span id="alert1"></span>
+                    <?php
+                    if(isset($_SESSION['status'])){
+                        echo "<h4>".$_SESSION['status']."</h4>";
+                        unset($_SESSION['status']);
+            
+                    }
+                    ?>
                 </div>
+            </div>
     
                 <div class="input-field">
        
@@ -47,7 +50,7 @@ include ('database/database.php');
                 <div class="input-field">
        
                
-                   <input type="text" name="shop" id="shop" placeholder="shop_name" >
+                   <input type="text" name="shop" id="shop" placeholder="Store name" >
        
                </div >
                <div class="input-field">
@@ -59,12 +62,7 @@ include ('database/database.php');
             </div>
                 
         </form>
-        <div class="gobi">
-            <div class="lu">
-
-                <p><h4>Create your account </h4> to be part of our world</p>
-            </div>
-        </div>
+        
     </div>
 </div>
 
