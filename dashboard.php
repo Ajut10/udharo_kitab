@@ -14,10 +14,11 @@
 <body>
 <!-- html code -->
     <div class="container">
-        <aside>
+        <aside>     
             <div class="top">
                 <div class="logo">
                     <h2>Udharo<span class="danger">Kitab</h2>
+                    <h5><span class="danger">Digital Credit Book</span> </h5>
                 </div>
                 <div class="close" id="close-btn">
                 <span class="material-symbols-outlined">
@@ -30,7 +31,7 @@
                     <span class="material-symbols-outlined">home</span>
                     <h3>Home</h3>
                 </a>
-                <a href="#">
+                <a href="#" class="active">
                     <span class="material-symbols-outlined">person</span>
                     <h3>Customers</h3>
                 </a>
@@ -39,12 +40,17 @@
                     <h3>Add Credit</h3>
                 </a>
                 <a href="#">
-                    <span class="material-symbols-outlined">home</span>
-                    <h3>hh</h3>
+                    <span class="material-symbols-outlined">mail</span>
+                    <h3>Message</h3>
+                    <span class="message-count">72</span>
                 </a>
                 <a href="#">
                     <span class="material-symbols-outlined">settings</span>
-                    <h3>Setting</h3>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
                 </a>
             </div>
         </aside>
