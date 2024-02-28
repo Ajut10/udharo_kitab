@@ -54,7 +54,144 @@
                 </a>
             </div>
         </aside>
+        <!-------------END OF ASIDE------------->
+        <main>
+            <h1>Dashboard</h1>
+            
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-symbols-outlined">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>Rs 35,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="35" cy="35" r="33"> </circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-------------END OF SALES----------->
+                
+                <div class="expenses">
+                    <span class="material-symbols-outlined">trending_up</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Expenses</h3>
+                            <h1>Rs 35,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="35" cy="35" r="33"> </circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-------------END OF EXPENSES----------->
+                <div class="income">
+                    <span class="material-symbols-outlined">bar_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Income</h3>
+                            <h1>Rs 35,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="35" cy="35" r="33"> </circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-------------END OF INCOME ----------------->
+            </div>
+            <!---------------END OF INSIGHTS ---------------->
+            <div class="recent-order">
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <th>Name</th>
+                        <th>Number</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Manoj</td>
+                            <td>9878965430</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Manoj</td>
+                            <td>9878965430</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Manoj</td>
+                            <td>9878965430</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Manoj</td>
+                            <td>9878965430</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+        </main>
+        <!--------------------END OF MAIN --------------->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+                
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-outlined">light_mode</span>
+                    <span class="material-symbols-outlined">dark_mode</span>
+
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey,<b>Shauji</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--------END OF RIGHT -------->
     </div>
+    
 
 
 
