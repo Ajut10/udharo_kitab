@@ -78,47 +78,36 @@
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
                 <!-------------END OF SALES----------->
-                
-                <div class="expenses">
-                    <span class="material-symbols-outlined">trending_up</span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Expenses</h3>
-                            <h1>Rs 35,00</h1>
+                <div class="recent-updates">
+                <h2>Recent Update</h2>
+                <div class="updates">
+                    <div class="update">
+
+                        <div class="profile-photo">
+                            <img src="images/profile-2.jpg" alt="">
                         </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx="35" cy="35" r="33"> </circle>
-                            </svg>
-                            <div class="number">
-                                <p>81%</p>
-                            </div>
+                        <div class="message">
+                            <p><b>Pramod</b> received his order at nights</p>
+                            <small class="text-muted">2 minutes ago</small>
                         </div>
                     </div>
-                    <small class="text-muted">Last 24 Hours</small>
-                </div>
-                <!-------------END OF EXPENSES----------->
-                <div class="income">
-                    <span class="material-symbols-outlined">bar_chart</span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Income</h3>
-                            <h1>Rs 35,00</h1>
+                    <div class="update">
+
+                        <div class="profile-photo">
+                            <img src="images/profile-3.jpg" alt="">
                         </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx="35" cy="35" r="33"> </circle>
-                            </svg>
-                            <div class="number">
-                                <p>81%</p>
-                            </div>
+                        <div class="message">
+                            <p><b>Pramod</b> received his order at nights</p>
+                            <small class="text-muted">2 minutes ago</small>
                         </div>
                     </div>
-                    <small class="text-muted">Last 24 Hours</small>
+                    
+                    
                 </div>
-                <!-------------END OF INCOME ----------------->
             </div>
-            <!---------------END OF INSIGHTS ---------------->
+               
+            </div>
+            <!---------------------------END OF INSIGHTS --------------------->
             <div class="recent-order">
                 <h2>Recent Orders</h2>
                 <table>
@@ -164,7 +153,7 @@
                 <a href="#">Show All</a>
             </div>
         </main>
-        <!--------------------END OF MAIN --------------->
+        <!----------------------END OF MAIN ------------------------>
         <div class="right">
             <div class="top">
                 <button id="menu-btn">
@@ -172,7 +161,7 @@
                 
                 </button>
                 <div class="theme-toggler">
-                    <span class="material-symbols-outlined">light_mode</span>
+                    <span class="material-symbols-outlined active">light_mode</span>
                     <span class="material-symbols-outlined">dark_mode</span>
 
                 </div>
@@ -188,8 +177,19 @@
                 </div>
 
             </div>
+            <!-------------------- END OF TOP ----------------------------->
+          
+            <!-----------------END OF RECENT UPDATES ------------------->
+            <div class="sales-analytics">
+                <div class="item add-product">
+                    <div>
+                    <span class="material-symbols-outlined">add</span>
+                    <h3>Add Product</h3>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--------END OF RIGHT -------->
+        <!------------------------END OF RIGHT --------------------------->
     </div>
     
 
