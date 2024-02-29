@@ -8,7 +8,7 @@ if(isset($_POST['login_now_btn'])){
         $email = mysqli_real_escape_string($conn,$_POST['email']);
         $password=mysqli_real_escape_string($conn, $_POST['password']);
 
-        $login_query ="Select * from user where email='$email' and password='$password'";
+        $login_query ="Select * from user where email='$email' and password='$password' limit 1";
         $login_query_run=mysqli_query($conn,$login_query);
 
         if(mysqli_num_rows($login_query_run)>0){
@@ -16,15 +16,20 @@ if(isset($_POST['login_now_btn'])){
             echo $row['verify_status'];
 
             if($row['verify_status']== "1"){
-                $_SESSION['authenticates']=TRUE;
+                $_SESSION['authenticated']=TRUE;
                 $_SESSION['auth_user']=[
-                    'username'=>$row['name'],
-                    'phone'=>$row['phone'],
+                    'username'=>$row['name'], 
                     'email'=>$row['email'],
                 ];
                 $_SESSION['status']="you are login to dashboard page";
-                header("Location:dashboard.php");
-                exit(0);
+                if($row['email']== "darjidon12@gmail.com" ){
+
+                    header("Location:dashboard.php");
+                    exit(0);
+                }else{
+                    header("Location:dash2.php");
+                    exit(0);
+                }
             }
             else{
                 

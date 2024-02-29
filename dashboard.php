@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('authentication.php');
     $page_title="Dashboard";
     include('includes/header.php');
@@ -48,7 +49,7 @@
                     <span class="material-symbols-outlined">settings</span>
                     <h3>Settings</h3>
                 </a>
-                <a href="#">
+                <a href="logout.php">
                     <span class="material-symbols-outlined">logout</span>
                     <h3>Logout</h3>
                 </a>

@@ -1,12 +1,14 @@
-<!-- <?php
+ <?php
 session_start();
 $page_title="Login";
 include ('includes/header.php');
 include ('database/database.php');
-
-?> -->
-
-
+if(isset($_SESSION['authenticated'])){
+    $_SESSION['status']="please login to acess user dashboard";
+    header("Location:dashboard.php");
+    exit(0);
+}
+?> 
 
 
 <!-- login html code--> 
