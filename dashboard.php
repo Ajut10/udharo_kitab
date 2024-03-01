@@ -193,7 +193,7 @@
         <!------------------------END OF RIGHT --------------------------->
     </div>
     
-
+<script src="javascript/dashScript.js"></script>
 
 
 
