@@ -2,6 +2,8 @@ const sideMenu =document.querySelector('aside');
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler");
+const sidelinks = document.querySelectorAll(".side_link");
+const windowPathname = window.location.pathname;
 
 // show sidebar menu
 menuBtn.addEventListener('click',()=>{
@@ -22,3 +24,11 @@ themeToggler.addEventListener('click',()=>{
 
 })
 
+sidelinks.forEach(sidelink=>{
+    if(sidelink.href.includes(windowPathname)){
+        sidelink.classList.add('active');
+
+    }
+    
+   
+});

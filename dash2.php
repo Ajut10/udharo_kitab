@@ -8,7 +8,7 @@
 
 <body>
     hi
-
+    <a href="logout.php">logout</a>
 <?php
     include('includes/footer.php');
 ?>

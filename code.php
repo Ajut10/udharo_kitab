@@ -44,7 +44,6 @@ if(isset($_POST['register_btn'])){
     $name= $_POST["name"];
     $password=$_POST["password"];
     $phone=$_POST["phone"];
-    $shop_name=$_POST["shop"];
     $email=$_POST["email"];
     $verify_token= md5(rand());
     // sendmail_verify("$name","$email","$verify_token");
@@ -61,7 +60,7 @@ if(isset($_POST['register_btn'])){
 
     }else{
         // registering user data
-        $query= "insert into user(name,phone,password,shop_name,verify_token,email) values('$name','$phone','$password','$shop_name','$verify_token','$email')";
+        $query= "insert into user(name,phone,password,verify_token,email) values('$name','$phone','$password','$verify_token','$email')";
         $query_run =mysqli_query($conn,$query);
 
         if($query_run){

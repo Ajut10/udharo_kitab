@@ -3,6 +3,8 @@ session_start();
 $page_title="Login";
 include ('includes/header.php');
 include ('database/database.php');
+include('class/addtional_function.php');
+
 if(isset($_SESSION['authenticated'])){
     $_SESSION['status']="please login to acess user dashboard";
     header("Location:dashboard.php");
@@ -14,19 +16,13 @@ if(isset($_SESSION['authenticated'])){
 <!-- login html code--> 
 
 <div class="container">
-    <?php 
-    if(isset($_SESSION['status'])){
-        ?>
+   
         <div class="alert">
         
-            <h4><?=$_SESSION['status'];?></h4>
+            <?php alertMessage();?></h4>
 
         </div>
-        <?php
-            unset($_SESSION['status']);
-
-        }
-        ?>
+       
     <form action="logincode.php" method="post" onclick="return validation()">
         
        

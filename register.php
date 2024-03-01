@@ -4,6 +4,7 @@ $page_title="Register";
 include ('includes/header.php');
 
 include ('database/database.php');
+include('class/addtional_function.php');
 
 ?>
 
@@ -17,22 +18,21 @@ include ('database/database.php');
         <h1>Register</h1>
         
         <form action="code.php" method="post" onsubmit="return validation()" novalidate>
+            <div class="alert">
+               
+                <?php
+                alertMessage();
+                ?>
+                <h4 id="alert1">
+                    
+                </h4>
+            </div>
             
         <div class="input-group">
             <div class="input-field">
                 
                 
                 <input type="text" name="name" id="name" autocomplete="off" placeholder="Name" >
-                <div class="alert">
-                    <span id="alert1"></span>
-                    <?php
-                    if(isset($_SESSION['status'])){
-                        echo "<h4>".$_SESSION['status']."</h4>";
-                        unset($_SESSION['status']);
-            
-                    }
-                    ?>
-                </div>
             </div>
     
                 <div class="input-field">

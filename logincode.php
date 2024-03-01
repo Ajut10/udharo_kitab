@@ -20,11 +20,12 @@ if(isset($_POST['login_now_btn'])){
                 $_SESSION['auth_user']=[
                     'username'=>$row['name'], 
                     'email'=>$row['email'],
+                    'usertype'=>$row['user_type']
                 ];
                 $_SESSION['status']="you are login to dashboard page";
-                if($row['email']== "darjidon12@gmail.com" ){
+                if($row['user_type']== "admin" ){
 
-                    header("Location:dashboard.php");
+                    header("Location:admin/dashboard.php");
                     exit(0);
                 }else{
                     header("Location:dash2.php");
