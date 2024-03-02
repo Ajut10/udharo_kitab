@@ -26,10 +26,13 @@
             <!-----------------END OF RECENT UPDATES ------------------->
             <div class="sales-analytics">
                 <div class="item add-product">
+                    <a href="create_product.php">
                     <div>
-                    <span class="material-symbols-outlined">add</span>
-                    <h3>Add Product</h3>
-                    </div>
+
+                            <span class="material-symbols-outlined">add</span>
+                            <h3>Add Product</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

@@ -10,4 +10,22 @@ function alertMessage(){
     
 }
 
+function check($result,$item){
+    
+    if(is_integer($result)){
+        $msg=$item." inserted successfully";
+    }else{
+        $msg="";
+    }
+    
+    if(isset($msg)){
+       echo "<h4>".$msg."</h4>";
+    }
+    
+}
+
+
+
+
+
 ?>
