@@ -42,7 +42,7 @@
                     <div class="update">
 
                         <div class="profile-photo">
-                            <img src="images/profile-2.jpg" alt="">
+                            <img src="../images/profile-2.jpg" alt="">
                         </div>
                         <div class="message">
                             <p><b>Pramod</b> received his order at nights</p>
@@ -52,7 +52,7 @@
                     <div class="update">
 
                         <div class="profile-photo">
-                            <img src="images/profile-3.jpg" alt="">
+                            <img src="../images/profile-3.jpg" alt="">
                         </div>
                         <div class="message">
                             <p><b>Pramod</b> received his order at nights</p>
