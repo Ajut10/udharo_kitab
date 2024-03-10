@@ -45,6 +45,22 @@ if(isset($_POST['register_btn'])){
     $password=$_POST["password"];
     $phone=$_POST["phone"];
     $email=$_POST["email"];
+    if($_FILES['image']['error']==0){
+        if($_FILES['image']['type']=="image/jpg"||$_FILES['image']['type']=="image/png"||$_FILES['image']['type']=="image/jpeg"){
+            if($_FILES['image']['size']<=1024*1024){
+                $imageName=uniqid().$_FILES['image']['name'];
+                move_uploaded_file($_FILES['image']['tmp_name'],'images/'.$imageName);
+                $image=$imageName;
+                
+                // print_r($_FILES);
+            }else{
+             $imageError="Error ,Exceeded 1mb!";
+            }
+        }else{
+            $imageError="invalid Image!";
+        }
+    }
+
     $verify_token= md5(rand());
     // sendmail_verify("$name","$email","$verify_token");
     // echo "sent or not";
@@ -60,7 +76,7 @@ if(isset($_POST['register_btn'])){
 
     }else{
         // registering user data
-        $query= "insert into user(name,phone,password,verify_token,email) values('$name','$phone','$password','$verify_token','$email')";
+        $query= "insert into user(name,phone,password,verify_token,email,image) values('$name','$phone','$password','$verify_token','$email','$image')";
         $query_run =mysqli_query($conn,$query);
 
         if($query_run){

@@ -17,7 +17,7 @@ include('class/addtional_function.php');
     <div class="form-box">
         <h1>Register</h1>
         
-        <form action="code.php" method="post" onsubmit="return validation()" novalidate>
+        <form action="code.php" method="post" enctype="multipart/form-data" onsubmit="return validation()" novalidate>
             <div class="alert">
                
                 <?php
@@ -50,12 +50,13 @@ include('class/addtional_function.php');
                 <div class="input-field">
        
                
-                   <input type="text" name="shop" id="shop" placeholder="Store name" >
+                  <input type="file" name="image" id="image" placeholder="image">
        
                </div >
                <div class="input-field">
                    <input type="email" name="email" id="email" placeholder="email">
                </div>
+               
                <div class="input-field">
                    <button type="submit" name="register_btn">Register</button>
                </div>

@@ -13,7 +13,7 @@ function validation(){
         document.getElementById('alert1').innerHTML = 'Please enter the name';
         return false;
     }else {
-        var namecheck=/^[a-zA-Z]{3,30}$/;
+        var namecheck=/^[a-zA-Z]+ [a-zA-Z]+$/;
         if (namecheck.test(name)){
         //    return true;
         }else{

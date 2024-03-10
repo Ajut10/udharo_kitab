@@ -7,7 +7,7 @@ include('class/addtional_function.php');
 
 if(isset($_SESSION['authenticated'])){
     $_SESSION['status']="please login to acess user dashboard";
-    header("Location:dashboard.php");
+    header("Location:dash2.php");
     exit(0);
 }
 ?> 
