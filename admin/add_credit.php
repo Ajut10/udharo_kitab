@@ -67,6 +67,10 @@ $datalist=$product->retrieve();
             <?php
                 if(isset($_SESSION['productitems'])){
                     $sessionProducts=$_SESSION['productitems'];
+                    if(empty($sessionProducts)){
+                        unset($_SESSION['productitem_id']);
+                        unset($_SESSION['productitems']);
+                    }
                 
             ?>
             <table>
@@ -105,7 +109,7 @@ $datalist=$product->retrieve();
                             <input type="text" value="<?=number_format( $item['price']*$item['quantity'],0); ?>" name='amt'> 
                         </td>
                         <td>
-                            <a href="order-item-delete.php?index=<?= $key; ?>">Remove</a>
+                            <a href="delete_item.php?i=<?= $key; ?>"><span class="material-symbols-outlined decrement">delete</span></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

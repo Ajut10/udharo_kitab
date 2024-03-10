@@ -23,6 +23,15 @@ class Product extends Common {
 
     }
     public function delete(){
+        $conn=mysqli_connect('localhost','root','','kitab');
+        $sql="delete  from product where p_id='$this->p_id' ";
+        $var=$conn->query($sql);
+
+        if($var){
+            return "success";
+        }else{
+            return "failed";
+        }
     }
     public function retrieve()
     {
@@ -34,6 +43,17 @@ class Product extends Common {
         return $dataList;
         }else{
             return false;
+        }
+    }
+    function getById(){
+        $conn=mysqli_connect('localhost','root','','kitab');
+        $sql="select * from product where p_id='$this->p_id' ";
+        $var=$conn->query($sql);
+        if($var->num_rows>0){
+            $data=$var->fetch_object();
+            return $data;
+        }else{
+            return [ ];
         }
     }
 }

@@ -46,5 +46,17 @@ function jsonResponse($status,$status_type,$message){
     return;
 }
 
+function checkParamId($type){
+    if(isset($_GET[$type])){
+        if($_GET[$type] !=''){
+            return $_GET[$type];
+        }else{
+            return  '<h5> Not ID Found</h5>';
+        }
+    }else{
+        return '<h5> No ID Found</h5>';
+    }
+}
+
 
 ?>
