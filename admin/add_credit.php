@@ -9,6 +9,7 @@ include('../class/addtional_function.php');
 $product = new Product();
 $datalist=$product->retrieve();
 
+
 ?>
 <style>
 
@@ -24,19 +25,16 @@ $datalist=$product->retrieve();
       .ui-autocomplete-row:hover
       {
           background-color: #ddd;
-      }
-      
-      </style>
+        }
+        
+        </style>
       <link rel="stylesheet" href="../css/dashStyle.css">
       <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
       <main>
           <div class="form">
+          
               
-              <h2>Customer Information</h2>
-              <label for="">Customer Name</label>
-              <input type="text" name="cust_name" id="cust_name" autocomplete="off" >
-              <input type="hidden" name="cust_id" id="cust_id">
-              <!-- <input type="submit" value="submit" name="submit"> -->
+              
               <form action="product.php" method="post">
                   <?php alertMessage(); ?>
             
@@ -63,7 +61,6 @@ $datalist=$product->retrieve();
             
         </form>
         <div class="recent-order" onload="myload()">
-            <h3>Selected list</h3>
             <?php
                 if(isset($_SESSION['productitems'])){
                     $sessionProducts=$_SESSION['productitems'];
@@ -71,8 +68,9 @@ $datalist=$product->retrieve();
                         unset($_SESSION['productitem_id']);
                         unset($_SESSION['productitems']);
                     }
-                
-            ?>
+                    
+                    ?>
+                    <h3>Selected list</h3>
             <table>
                 <thead>
                     <th>Id</th>
@@ -83,7 +81,9 @@ $datalist=$product->retrieve();
                     <th>Remove</th>
                 </thead>
                 <tbody >
-                    <?php  foreach($sessionProducts as $key => $item) :?>
+                    <?php  foreach($sessionProducts as $key => $item) :
+                      
+                        ?>
                     <tr>
                         <td><?= $key+1; ?></td>
                         <td><?= $item['name'] ?></td>
@@ -96,14 +96,14 @@ $datalist=$product->retrieve();
                             
                             <div class="qtyBox">
                                 <button><span class="material-symbols-outlined increment">add</span></button>
-
+                                
                                 <input type="text" value="<?=$item['quantity'];?>" class="qty">
                                 <input type="hidden" name="" class="prodId" value="<?= $item['product_id']; ?>">
                                 <button><span class="material-symbols-outlined decrement">remove</span></button>
                  
                             </div>
-                                
-                           
+                            
+                            
                         </td>
                         <td>
                             <input type="text" value="<?=number_format( $item['price']*$item['quantity'],0); ?>" name='amt'> 
@@ -112,17 +112,33 @@ $datalist=$product->retrieve();
                             <a href="delete_item.php?i=<?= $key; ?>"><span class="material-symbols-outlined decrement">delete</span></a>
                         </td>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php 
+                    
+                    endforeach; ?>
                 </tbody>
             </table>
+            <hr>
+          
+
+                <h2>Customer Information</h2>
+                <label for="">Customer Name</label>
+                <input type="text" name="cust_name" id="cust_name" autocomplete="off" >
+                <input type="hidden" name="cust_id" id="cust_id">
+                <input type="text" name="cust_phone" id="cust_phone">
+                
+                <button type="submit" name="proced" class="proced">Proced</button>
+       
             <?php
+
                 }
                 ?>
             
      
         </div>
-        <input type="text" name="total" id="">
-    </div>
+        
+
+            </div>
+        
 </main>
 </div>
       <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -133,8 +149,8 @@ $datalist=$product->retrieve();
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script>
             $(document).ready(function() {
-    $('.select').select2();
-});
+                $('.select').select2();
+            });
         </script>
       <script>
           $(function(){
@@ -144,6 +160,7 @@ $datalist=$product->retrieve();
                   select:function(event, ui){
                       $("#cust_name").val(ui.item.value);
                       $("#cust_id").val(ui.item.id);
+                      $("#cust_phone").val(ui.item.phone);    
                   }
               }).data("ui-autocomplete")._renderItem = function( ul, item ) {
           return $( "<li class='ui-autocomplete-row'></li>" )
