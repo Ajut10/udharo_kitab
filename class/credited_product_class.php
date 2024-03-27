@@ -8,18 +8,19 @@ class Credit_detail extends Common {
     public $id, $order_id, $p_id, $p_rate,$p_quantity;
     public function save(){
         $conn=mysqli_connect('localhost','root','','kitab');
-    
+        
         $sql="insert into credited_details(order_id,p_id,p_rate,p_quantity) values('$this->order_id','$this->p_id','$this->p_rate','$this->p_quantity')";
         
         $var=$conn->query($sql);
-    if($conn->affected_rows == 1 && $conn->insert_id>0){
-        return $conn->insert_id;
-    }else{
-        return false;
-    }
+        if($conn->affected_rows == 1 && $conn->insert_id>0){
+            return $conn->insert_id;
+        }else{
+            return false;
+        }
         
     }
     public function edit(){
+        $conn=mysqli_connect('localhost','root','','kitab');
 
     }
     public function delete(){

@@ -356,6 +356,10 @@ main .recent-order a{
     margin: 1rem auto;
     color: var(--color-primary);
 }
+main .recent-order img{
+    width: 2.8rem;
+    height: 2.8rem;
+}
 /* !!!!!!!!!!!!!!!RECENT UPADTE !!!!!!!!!!!!!!!!!*/
 main .recent-updates{
     margin-top: 1rem;
@@ -516,7 +520,7 @@ main .recent-updates .updates .update{
     margin: 2rem 0 0 0;
  }
  main .recent-order table{
-    width:83vw
+    width:83vw;
  }
  main table thead tr th:last-child,
  main table thead tr td:first-child{

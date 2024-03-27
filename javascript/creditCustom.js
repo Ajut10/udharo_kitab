@@ -63,54 +63,31 @@ $(document).ready(function() {
         }
         
         
-        $.ajax({
-            type: "POST",
-            url: "product.php",
-            data: {
-                "procedbtn":true,
-                "cust_name": custname,
-                "cust_phone": cust_phone,
-            },
+        // $.ajax({
+        //     type: "POST",
+        //     url: "product.php",
+        //     data: {
+        //         "procedbtn":true,
+        //         "cust_name": custname,
+        //         "cust_phone": cust_phone,
+        //     },
           
-            sucess: function(response){
-                var res =JSON.parse(response);
-                // console.log(res);
-                if(res.status==200){
-                    alert("done");
-                    window.location.href="summary.php";
-                }
-                else if(res.status==404){
-                    alert("error");
-                }
-                alert(res);
-            }
-        });
+        //     sucess: function(response){
+        //         var res =JSON.parse(response);
+        //         console.log(res);
+        //         if(res.status==200){
+        //             alert("done");
+                    // location.href="summary.php";
+        //         }
+        //         else if(res.status==404){
+        //             alert("error");
+        //         }
+        //         alert(res);
+        //     }
+        // });
     });
-    // function procedbtn(cust_name,cust_phone){
-    //     alert(cust_name);
-    //      $.ajax({
-    //             type: "POST",
-    //             url: "prototype.php",
-    //             data: {
-    //                 'procedbtn':true,
-    //                 'cust_name': cust_name,
-    //                 'cust_phone': cust_phone,
-    //             },
-              
-    //             sucess: function(response){
-    //                 var res =JSON.parse(response);
-    //                 alert(res);
-    //                 console.log(res);
-    //                 if(res.status==200){
-    //                     window.location.href="summary.php";
-    //                     alert("done");
-    //                 }
-    //                 else if(res.status==404){
-    //                     alert("error");
-    //                 }
-    //             }
-    //         });
-    // }
+  
+   
     $(document).on('click','#saveCredit',function(){
         
         $.ajax({
@@ -122,7 +99,8 @@ $(document).ready(function() {
             success: function(response){
                 var res = JSON.parse(response);
                 if(res.status==200){
-                    alert("done muji");
+                    alert("done");
+                    window.location.href="customer.php"
                     console.log(res);
                 }else{
                     alert("error");

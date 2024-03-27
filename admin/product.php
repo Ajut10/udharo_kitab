@@ -62,7 +62,7 @@ if(isset($_POST['add_item'])){
             $_SESSION['status'] = "not found";
             header('location:add_credit.php');
             exit(0);
-            // redirect('location:add_credit.php', "no product found");
+            redirect('location:add_credit.php', "no product found");
         }
         
     }else{
@@ -103,11 +103,11 @@ if(isset($_POST['procedbtn'])){
             $_SESSION['cust_name']=$name;
             $_SESSION['invoice_no']="CRE-".rand(111111,999999);
             $_SESSION['phone']=$phone;
-            // redirect('summary.php',"welcome");
-            jsonResponse(200,'sucess','Customer Found');
+            redirect('summary.php',"welcome");
+            // jsonResponse(200,'sucess','Customer Found');
         }else{
-            jsonResponse(404,'warning','Customer Not Found');
-            // redirect('add_credit.php',"not found");
+            // jsonResponse(404,'warning','Customer Not Found');
+            redirect('add_credit.php',"not found");
         }
     }else{
         jsonResponse(500,'Error',"Somethng went wrong");
@@ -118,37 +118,41 @@ $creditObj= new Credit();
 $creditedObj = new Credit_detail();
 
 if(isset($_POST['saveCredit'])){
+    // $_SESSION['invoice_no']="CRE-".rand(111111,999999);
     $phone=validates($_SESSION['phone']);
     $invoice_no=validates($_SESSION['invoice_no']);
-
     $checkCustomer=mysqli_query($conn, "SELECT * FROM user where phone='$phone' limit 1");
     if(!$checkCustomer){
-        jsonResponse(500,'error','something went wrong');
+        // jsonResponse(500,'error','something went wrong');
     }
     if(mysqli_num_rows($checkCustomer)>0){
         $customerData =mysqli_fetch_assoc($checkCustomer);
         if(!isset($_SESSION['productitems'])){
-            jsonResponse(404,'warning','Something went wrong');
+            // jsonResponse(404,'warning','Something went wrong');
         }
+
         $sessionProducts=$_SESSION['productitems'];
         $totalAmount=0;
         foreach($sessionProducts as $amtitem){
             $totalAmount += $amtitem['price']*$amtitem['quantity'];
         }
+        // echo "<alert>".$invoice_no."</alert>";
         $creditObj->set('customer_id',$customerData['u_id']);
         $creditObj->set('invoice_no',$invoice_no);
         $creditObj->set('total_amount',$totalAmount);
         $creditObj->set('credited_date',date('Y-m-d H:i:s'));
         $creditObj->set('status',"pending");
-
+        
         $result=$creditObj->save();
-        $lastOrderId=mysqli_insert_id($conn);
+        
+      
+        
         foreach($sessionProducts as $productitem){
             $productId=$productitem['product_id'];
             $price=$productitem['price'];
             $quantity=$productitem['quantity'];
 
-            $creditedObj->set('order_id',$lastOrderId);
+            $creditedObj->set('order_id',$result);
             $creditedObj->set('p_id',$productId);
             $creditedObj->set('p_rate',$price);
             $creditedObj->set('p_quantity',$quantity);

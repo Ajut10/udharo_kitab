@@ -121,12 +121,15 @@ $datalist=$product->retrieve();
           
 
                 <h2>Customer Information</h2>
-                <label for="">Customer Name</label>
-                <input type="text" name="cust_name" id="cust_name" autocomplete="off" >
-                <input type="hidden" name="cust_id" id="cust_id">
-                <input type="text" name="cust_phone" id="cust_phone">
-                
-                <button type="submit" name="proced" class="proced">Proced</button>
+                <form action="product.php" method="post">
+
+                    <label for="">Customer Name</label>
+                    <input type="text" name="cust_name" id="cust_name" autocomplete="off" >
+                    <input type="hidden" name="cust_id" id="cust_id">
+                    <input type="text" name="cust_phone" id="cust_phone">
+                    
+                    <button type="submit" name="procedbtn" class="proced">Proced</button>
+                </form>
        
             <?php
 

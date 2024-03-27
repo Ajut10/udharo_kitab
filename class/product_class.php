@@ -20,6 +20,15 @@ class Product extends Common {
         
     }
     public function edit(){
+        $conn=mysqli_connect('localhost','root','','kitab');
+        $sql = "update product set p_name = '$this->p_name', p_price = '$this->p_price', status = '$this->p_status',modified_date = '$this->p_modified_date', description = '$this->p_description', image = '$this->p_image' where p_id = '$this->p_id'";
+
+        $conn->query($sql);
+        if($conn->affected_rows==1){
+            return $this->p_id;
+        }else{
+            return false;
+        }
 
     }
     public function delete(){
@@ -53,7 +62,7 @@ class Product extends Common {
             $data=$var->fetch_object();
             return $data;
         }else{
-            return [ ];
+            return [];
         }
     }
 }

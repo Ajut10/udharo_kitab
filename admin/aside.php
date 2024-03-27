@@ -27,6 +27,10 @@
                     <span class="material-symbols-outlined">person</span>
                     <h3>Customers</h3>
                 </a>
+                <a href="listproduct.php" class="side_link" >
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    <h3>Products</h3>
+                </a>
                 <a href="add_credit.php" class="side_link">
                     <span class="material-symbols-outlined">note_add</span>
                     <h3>Add Credit</h3>

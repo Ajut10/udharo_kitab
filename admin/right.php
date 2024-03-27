@@ -34,6 +34,15 @@
                         </div>
                     </a>
                 </div>
+                <div class="item add-product">
+                    <a href="add_credit.php">
+                    <div>
+
+                            <span class="material-symbols-outlined">library_add</span>
+                            <h3>Add Credit</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
         <!------------------------END OF RIGHT --------------------------->
