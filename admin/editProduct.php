@@ -37,7 +37,7 @@ if(isset($_POST['edit'])){
     }
     $product_result=$product->edit();
     if($product_result){
-        echo 12;
+       
         redirect("listproduct.php","Sucessfully Updated");
     }
     

@@ -28,7 +28,7 @@ if(isset($_POST['login_now_btn'])){
                     header("Location:admin/dashboard.php");
                     exit(0);
                 }else{
-                    header("Location:dash2.php");
+                    header("Location:user/dash2.php");
                     exit(0);
                 }
             }
