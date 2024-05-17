@@ -37,7 +37,7 @@ class Credit_detail extends Common {
     public function retrieve()
     {
         $conn=mysqli_connect('localhost','root','','kitab');
-        $sql="select * from product";
+        $sql="select c.*,p.*,cd.* from credit c, product p,credited_details cd where cd.order_id=c.id and cd.p_id=p.p_id and c.id='$this->id'";
         $var=$conn->query($sql);
         if($var->num_rows>0){
         $dataList=$var->fetch_all(MYSQLI_ASSOC)  ;

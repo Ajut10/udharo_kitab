@@ -39,7 +39,7 @@ class Credit extends Common {
     public function retrieve()
     {
         $conn=mysqli_connect('localhost','root','','kitab');
-        $sql="select * from product";
+        $sql="select c.*,u.* from credit c, user u where u.u_id=c.customer_id order by c.id desc";
         $var=$conn->query($sql);
         if($var->num_rows>0){
         $dataList=$var->fetch_all(MYSQLI_ASSOC)  ;
@@ -48,17 +48,17 @@ class Credit extends Common {
             return false;
         }
     }
-    // function getById(){
-    //     $conn=mysqli_connect('localhost','root','','kitab');
-    //     $sql="select * from product where p_id='$this->p_id' ";
-    //     $var=$conn->query($sql);
-    //     if($var->num_rows>0){
-    //         $data=$var->fetch_object();
-    //         return $data;
-    //     }else{
-    //         return [ ];
-    //     }
-    // }
+    function getById(){
+        $conn=mysqli_connect('localhost','root','','kitab');
+        $sql="select c.*,u.* from credit c, user u where u.u_id=c.customer_id and c.id='$this->id' order by c.id desc ";
+        $var=$conn->query($sql);
+        if($var->num_rows>0){
+            $data=$var->fetch_object();
+            return $data;
+        }else{
+            return [ ];
+        }
+    }
 }
 
 ?>

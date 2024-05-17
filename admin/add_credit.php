@@ -35,10 +35,10 @@ $datalist=$product->retrieve();
           
               
               
-              <form action="product.php" method="post">
-                  <?php alertMessage(); ?>
-            
-            <h2>Product Information</h2>
+              <form action="product.php" method="POST">
+                  
+                  <h2>Product Information</h2>
+                  <div style="color: red;"><?php alertMessage(); ?> </div>
             <div class="select-product">
 
                 <h3>Add Product</h3>
@@ -53,7 +53,7 @@ $datalist=$product->retrieve();
                 <label for="">Quantity</label>
                 <input type="text" name="quantity" value="1" id="">
             </div>
-            <button type="submit" name="add_item">add item</button>
+            <button type="submit" name="add_item" class="btn">Add Item</button>
 
             
           
@@ -88,7 +88,7 @@ $datalist=$product->retrieve();
                         <td><?= $key+1; ?></td>
                         <td><?= $item['name'] ?></td>
                         <td>
-                            <input type="text" value="<?= $item['price']; ?>" >
+                            <?= $item['price']; ?>  
                         </td>
                         
                         <td>
@@ -106,7 +106,7 @@ $datalist=$product->retrieve();
                             
                         </td>
                         <td>
-                            <input type="text" value="<?=number_format( $item['price']*$item['quantity'],0); ?>" name='amt'> 
+                            <?=number_format( $item['price']*$item['quantity'],0); ?>
                         </td>
                         <td>
                             <a href="delete_item.php?i=<?= $key; ?>"><span class="material-symbols-outlined decrement">delete</span></a>
@@ -121,15 +121,21 @@ $datalist=$product->retrieve();
           
 
                 <h2>Customer Information</h2>
-                <form action="product.php" method="post">
+                <!-- <form action="product.php" method="post"> -->
+                    <div>
 
-                    <label for="">Customer Name</label>
-                    <input type="text" name="cust_name" id="cust_name" autocomplete="off" >
-                    <input type="hidden" name="cust_id" id="cust_id">
-                    <input type="text" name="cust_phone" id="cust_phone">
+                        <label for="">Customer Name</label>
+                        <input type="text" name="cust_name" id="cust_name" autocomplete="off" >
+                        <input type="hidden" name="cust_id" id="cust_id">
+                    </div>
+                    <div>
+                        
+                        <label for="">Customer Phone</label>
+                        <input type="text" name="cust_phone" id="cust_phone">
+                    </div>
                     
-                    <button type="submit" name="procedbtn" class="proced">Proced</button>
-                </form>
+                    <button type="submit" name="procedbtn" class="btn proced">Proced</button>
+                <!-- </form> -->
        
             <?php
 

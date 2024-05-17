@@ -31,9 +31,9 @@
                     <span class="material-symbols-outlined">inventory_2</span>
                     <h3>Products</h3>
                 </a>
-                <a href="add_credit.php" class="side_link">
+                <a href="listcredit.php" class="side_link">
                     <span class="material-symbols-outlined">note_add</span>
-                    <h3>Add Credit</h3>
+                    <h3>Credit</h3>
                 </a>
                 <a href="pp"class="side_link">
                     <span class="material-symbols-outlined">mail</span>

@@ -1,14 +1,16 @@
 <?php
-if(!session_id())session_start();
-include('../includes/header.php');
-include('../class/product_class.php');
-include('../class/addtional_function.php');
-include('../authentication.php');
+if (!session_id()) {
+    session_start();
+}
 
-    
-    $productObj= new Product();
-    $datalist= $productObj->retrieve();
-include('aside.php');
+include '../includes/header.php';
+include '../class/product_class.php';
+include '../class/addtional_function.php';
+include '../authentication.php';
+
+$productObj = new Product();
+$datalist = $productObj->retrieve();
+include 'aside.php';
 
 ?>
 
@@ -25,30 +27,30 @@ include('aside.php');
                             <th></th>
                         </thead>
                         <tbody>
-                            <?php foreach ($datalist as $product){ ?>
+                            <?php foreach ($datalist as $product) {?>
                             <tr>
-                                <td><?php echo  $product['p_name']; ?></td>
+                                <td><?php echo $product['p_name']; ?></td>
                                 <td><?php echo $product['p_price']; ?> </td>
-                                <td align="center"> <img src="../images/<?php echo $product['image']?>"></td>
-                                <td class="warning">Pending</td>
-                                <td class="primary"><a href="editProduct.php?p_id=<?php echo $product['p_id']?>">Edit</a></td>
+                                <td align="center"> <img src="../images/<?php echo $product['image'] ?>"></td>
+                                <td class="success">Available</td>
+                                <td class="warning"><a href="editProduct.php?p_id=<?php echo $product['p_id'] ?>"><span class="material-symbols-outlined warning">edit</span></a></td>
                             </tr>
-                            <?php } ?>
-                            
-                          
+                            <?php }?>
+
+
                         </tbody>
                     </table>
-                    
-                </div>
+
+    </div>
 </main>
 
-<?php  
-include('right.php'); 
+<?php
+include 'right.php';
 
 ?>
 </div>
 <script src="../javascript/dashScript.js"></script>
 
 <?php
-include('../includes/footer.php');
+include '../includes/footer.php';
 ?>

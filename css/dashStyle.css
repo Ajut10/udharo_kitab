@@ -3,7 +3,7 @@
 :root {
 --color-primary: #5665eb;
 --color-danger: #e01c2d;
---color-success: #41f1b6;
+--color-success: #41f17c;
 --color-warning: #ffbb55;
 --color-white: #fff;
 --color-info-dark: #7d8da1;
@@ -125,6 +125,19 @@ b{
 }
 .warning{
     color: var(--color-warning);
+}       
+.btn{
+    font-size: 1.1rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    margin: 2rem 0;
+
+    transition: var(--transition);
+    display: inline-block;
+}
+.proced{
+    background-color: var(--color-success);
 }
 
 

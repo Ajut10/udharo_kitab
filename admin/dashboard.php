@@ -72,7 +72,7 @@
                     <thead>
                         <th>Name</th>
                         <th>Number</th>
-                        <th>Payment</th>
+                        <th>Email</th>
                         <th>Status</th>
                         <th></th>
                     </thead>

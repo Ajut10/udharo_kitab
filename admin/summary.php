@@ -5,18 +5,18 @@ if(!isset($_SESSION['productitems'])){
     echo '<script> window.location.href="add_credit.php";</script> no items selected';
 }
  
-
 ?>
+<link rel="stylesheet" href="../css/dashStyle.css">
 
 
 <main>
     <div>
-    <h2>Credit Summary</h2>
+    <h2>Summary of Credit Detail</h2>
     <h4>Customer Details</h4>    
     <p name="cust" >Customer Name: <?=$_SESSION['cust_name']; ?></p>
     <p>Customer Phone: <?= $_SESSION['phone']; ?></p>
     <p>Invoice no: <?=$_SESSION['invoice_no'];?></p>
-    <p>Date </p>
+    <p>Date: <?php echo date("jS F Y"); ?></p>
 
     
         <?php 
@@ -77,7 +77,7 @@ if(!isset($_SESSION['productitems'])){
         <?php
             if(isset($_SESSION['productitems'])):
         ?>
-        <button type="button" name="saveCredit" id="saveCredit">Save</button>
+        <button type="button" name="saveCredit" id="saveCredit" class="btn">Save</button>
         <?php
             endif;
         ?>
