@@ -1,5 +1,6 @@
 <?php
 if(!session_id()) session_start();
+include('../authentication.php');
 include('../includes/header.php');
 include ('aside.php');
 

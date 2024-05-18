@@ -17,6 +17,7 @@ if(isset($_POST['login_now_btn'])){
 
             if($row['verify_status']== "1"){
                 $_SESSION['authenticated']=TRUE;
+                $_SESSION['u_id']=$row['u_id'];
                 $_SESSION['auth_user']=[
                     'username'=>$row['name'], 
                     'email'=>$row['email'],

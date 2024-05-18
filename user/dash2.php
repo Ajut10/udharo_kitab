@@ -1,4 +1,5 @@
 <?php
+    if(!session_id()) session_start();
     include('../authentication.php');
     $page_title="Udharo kitab";
     include('../includes/header.php');
@@ -16,7 +17,7 @@
             
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Transactions</a></li>
+                <li><a href="#landing">Transactions</a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
@@ -35,6 +36,7 @@
             <div class="info">
                 <h1>WE TRUST YOU;</h1>
                 <H1>YOU TRUST US</H1>
+            
             </div>
         
             <div class="header-image">
@@ -43,6 +45,9 @@
         
         </div>
     </header>
+    <?php include('transaction.php');?>
+    
+    <script src="../javascript/main.js"></script>
   
     <a href="../logout.php">logout</a>
 <?php
