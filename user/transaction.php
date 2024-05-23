@@ -14,6 +14,9 @@
             <h3>Transactions</h3>
             <div class="transaction">
 
+                <?php if(!isset($datalist)){
+                    echo "no transaction till now";
+                }else{?>
                 <table>
                     <thead>
                         
@@ -22,16 +25,19 @@
                         <th>Credited Date</th>
                     </thead>
                     <tbody>
-                        <?php foreach ($datalist as $row){?>
+                         <?php foreach ($datalist as $row){?>
                         <tr>
-                            <td><?=$row['invoice_no']?> </td>
-                            <td><?=$row['total_amount']?></td>
-                            <td><?=$row['credited_date']?></td>
-                            <td><a href="detailTrans.php?id=<?=$row['id']?>"><span class="material-symbols-outlined">arrow_forward_ios</span></a></td>
+                            <td><?=$row['invoice_no'];?> </td>
+                            <td><?=$row['total_amount'];?></td>
+                            <td><?=$row['credited_date'];?></td>
+                            <td><a href="detailTrans.php?id=<?=$row['id'];?>"><span class="material-symbols-outlined">arrow_forward_ios</span></a></td>
                         </tr>
-                        <?php } ?>
+                       <?php } ?>
                     </tbody>
                 </table>
+                <?php }?>
+                
+              
             </div>
         </div>
     </section> 

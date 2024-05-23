@@ -15,7 +15,7 @@ $creditobj->set('id',$id);
 $data = $creditobj->getById();
 
 $credit_detailobj= new Credit_Detail();
-$credit_detailobj->set('id',$id);
+$credit_detailobj->set('order_id',$id);
 $datalist= $credit_detailobj->retrieve();
 
 
@@ -31,7 +31,7 @@ include 'aside.php';
                 <h4>Credit information</h4>
                     <p>Credited no  : <?= $data->invoice_no?></p>
                     <p>Credited Date :  <?= $data->credited_date?></p>
-                    <p>Phone :  <?= $data->phone?></p>
+                    <p>Phone :  <?= $data->id?></p>
                 
             </div>
             <div class="sales" >
@@ -42,6 +42,7 @@ include 'aside.php';
                     <p>Name  : <?= $data->name?></p>
                     <p>Email :  <?= $data->email?></p>
                     <p>Phone :  <?= $data->phone?></p>
+                
                 </div>
                 <div>
                     
@@ -50,10 +51,13 @@ include 'aside.php';
                     </div>
             </div>
 
+
            
         </div>
         <div class="recent-order">
+
                     <h2>Products</h2>
+
                     <table>
                         <thead>
                             <th>Name</th>
@@ -65,10 +69,12 @@ include 'aside.php';
                         <tbody>
                             <?php foreach ($datalist as $product) {?>
                                 <tr>
+                                    
                                     <td><?=$product['p_name'] ?></td>
-                                    <td><?=$product['p_price'] ?></td>
+                                    <td><?=$product['p_rate'] ?></td>
                                     <td><?=$product['p_quantity'] ?></td>
-                                    <td><?=number_format($product['p_price']*$product['p_quantity'])?></td>
+                                    <td><?=number_format($product['p_rate']*$product['p_quantity'])?></td>
+                                    <td><a href="editcredit.php?id=<?=$product['cp_id']?>&o_id=<?=$data->id?>">edit</a></td>
                                 </tr>
                             <?php }?>
 

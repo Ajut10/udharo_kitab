@@ -1,6 +1,6 @@
 <?php
     if(!session_id()) session_start();
-    include('../authentication.php');
+    include('../userprocess/userauthentication.php');
     $page_title="Udharo kitab";
     include('../includes/header.php');
     
@@ -49,7 +49,7 @@
     
     <script src="../javascript/main.js"></script>
   
-    <a href="../logout.php">logout</a>
+    <a href="../userprocess/userlogout.php">logout</a>
 <?php
     include('../includes/footer.php');
 ?>

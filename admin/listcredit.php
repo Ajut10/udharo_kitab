@@ -7,6 +7,7 @@ if (!session_id()) {
 include '../includes/header.php';
 $page_title = "Credit";
 include '../class/credit_class.php';
+include('../class/addtional_function.php');
 include '../authentication.php';
 $creditobj = new Credit();
 $datalist = $creditobj->retrieve();
@@ -16,7 +17,9 @@ include 'aside.php';
 ?>
 <main>
     <div class="recent-order">
+
         <h2>Credits</h2>
+        <?php alertMessage();?>
         <table>
             <thead>
                 <th>Name</th>
@@ -33,7 +36,8 @@ include 'aside.php';
                     <td><?=$credit['invoice_no']?></td>
                     <td><?=$credit['total_amount']?></td>
                     <td><?=$credit['credited_date']?></td>
-                    <td><a href="listCredit_details.php?id=<?=$credit['id'];?>"><span class="material-symbols-outlined primary">info</span></a>
+                    <td><a href="listCredit_details.php?id=<?=$credit['id'];?>"><span class="material-symbols-outlined primary">info</span></a></td>
+                    <td><a href="deleteCredit.php?id=<?=$credit['id'];?>"><span class="material-symbols-outlined danger">delete</span></a>
                         </td>
 
                 </tr>

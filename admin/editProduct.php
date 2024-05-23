@@ -50,27 +50,53 @@ if(isset($_POST['edit'])){
 ?>
 
 <main>
-    <?php
-    print_r($data);
-    ?>
-   
+    
+<div class="recent-product">
+    <a href="listproduct.php"><span class="material-symbols-outlined">keyboard_backspace</span></a>
     <form action="" method="post" enctype="multipart/form-data">
         <?php 
         if(!empty($product_result))
-           check($product_result,"cat");
+           check($product_result,"product");
         if(isset($imageError))
         echo $imageError;
-        ?>
-       
-        <input type="text" name="name" value=<?= $data->p_name?>><br>
-        <input type="text" name="price" value=<?= $data->p_price?>><br>
-        <input type="text" name="status"value=<?= $data->status?>><br>
-        <input type="text" name="description"value=<?= $data->description?>><br>
-        <img src="../images/<?= $data->image;?>" alt="" srcset="" width="100">
-        <input type="file" name="image">
-        <button type="submit" name="edit">EDIT</button>
+    ?>
+        <div class="form_control">
+            <label for="">Product Name</label>
+            <input type="text" name="name" value=<?= $data->p_name?>><br>
+            
+        </div>
+        <div class="form_control">
+            <label>Price</label>
+            
+            <input type="text" name="price" value=<?= $data->p_price?>><br>
+        </div>
+        <div class="form_control">
+            
+            <label>Status</label>
+            <input type="text" name="status"value=<?= $data->status?>><br>
+          
+        </div>
+        <div class="form_control">
+            <label>Description</label>
+           
+            <input type="text" name="description"value=<?= $data->description?>><br>
+        </div >
+        <div class="form_control">
+            
+            <label>Image</label>
+            <img src="../images/<?= $data->image;?>" alt="" srcset="" width="200" class="bhindi">
+            
+            <input type="file" name="image">
+        </div>
+        <div class="form_control">
+            
+            <button type="submit" name="edit" class="btn">EDIT</button>
+            
+        </div>
         
     </form>
+    </div> 
+    
 </main>
 
 

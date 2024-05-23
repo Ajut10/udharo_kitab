@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('database/database.php');
+include('../database/database.php');
 
 if(isset($_GET['token'])){
     $token = $_GET['token'];

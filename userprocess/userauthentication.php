@@ -1,9 +1,9 @@
 <?php
 if(!session_id())session_start();
 
-if(!isset($_SESSION['authenticated'])){
+if(!isset($_SESSION['authenticate'])){
     $_SESSION['status']="please login to acess user dashboard";
-    header("Location:../adminlogin.php");
+    header("Location:login.php");
     exit(0);
 }
 

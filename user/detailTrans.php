@@ -8,7 +8,7 @@ $page_title="Details";
 include '../includes/header.php';
 include '../class/credit_class.php';
 include('../class/credited_product_class.php');
-include '../authentication.php';
+include '../userprocess/userauthentication.php';
 $creditobj = new Credit();
 $id=$_GET['id'];
 $creditobj->set('id',$id);
@@ -70,6 +70,8 @@ $datalist= $credit_detailobj->retrieve();
                         <th></th>
                     </thead>
                     <tbody>
+
+                       <?php if(isset($datalist))?>
                         <?php foreach ($datalist as $product) {?>
                             <tr>
                                 <td><img src="../images/<?=$product['image']?>" alt=""></td>

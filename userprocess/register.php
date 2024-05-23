@@ -1,24 +1,22 @@
 <?php
 session_start();
 $page_title="Register";
-include ('includes/header.php');
+include ('../includes/header.php');
 
-include ('database/database.php');
-include('class/addtional_function.php');
+include ('../database/database.php');
+include('../class/addtional_function.php');
 
 ?>
 
 <!-- register html code -->
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <div class="alert">
        
-        <?php
-        alertMessage();
-        ?>
+        
         <h4 id="alert1">
             
         </h4>
@@ -28,7 +26,9 @@ include('class/addtional_function.php');
         <h1>Register</h1>
         <p>Fill up the form below to create account</p>
         <form action="code.php" class="sign-in_form" method="post" enctype="multipart/form-data" onsubmit="return validation()" novalidate>
-            
+            <span><?php
+        alertMessage();
+        ?></span>
        
             <div class="form_control">
                 
@@ -63,14 +63,14 @@ include('class/addtional_function.php');
                </div>
                
                
-                   <button type="submit" name="register_btn" class="btn btn-primary">Register</button>
+                   <button type="submit" name="register_btn" class="btn btn-dark">Register</button>
               
            
                 
         </form>
         
     </article>
-    <article class="sign-in_logo">
+    <article class="sign-in_log">
         <h1>UDAHRO<span>KITAB</span></h1>
         <h5>DIGITAL CREDIT BOOK</h5>
         <small class="next_page">Already have an account?</small> <a href="login.php">Sign in</a>
@@ -78,8 +78,8 @@ include('class/addtional_function.php');
     </article>
 </section>
 
-<script src="javascript/script.js"></script>
+<script src="../javascript/script.js"></script>
 <?php
-include "includes/footer.php";
+include "../includes/footer.php";
 ?>
 

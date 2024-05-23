@@ -33,7 +33,7 @@ class Product extends Common {
     }
     public function delete(){
         $conn=mysqli_connect('localhost','root','','kitab');
-        $sql="delete  from product where p_id='$this->p_id' ";
+        $sql="delete  from product where product.p_id='$this->p_id' ";
         $var=$conn->query($sql);
 
         if($var){

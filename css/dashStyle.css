@@ -161,6 +161,9 @@ aside .close{
     display: none;
 }
 
+
+
+
 /* !!!!!!!!!!!!!!!!!!!SIDEBAR!!!!!!!!!!!!!!!!!! */
 aside .sidebar{
     /* background: white; */
@@ -410,6 +413,7 @@ main .recent-updates .updates .update{
     /* background: gray; */
 }
 
+
 .right .top button{
     display: none;
 }
@@ -495,6 +499,55 @@ main .recent-updates .updates .update{
 .right .sales-analytics .add-product div h3{
     font-weight: 600;
 }
+/* !!!!!!!!!!!!!!!!!!!!!! form!!!!!!!!!!!!!!!!!!!!!!!!! */
+.recent-product{
+    width: 40%;
+}
+.form_control{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+input{  
+    border:1px solid var(--color-body-bg);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    /* height: 2rem; */
+}
+.form-control1 label{
+    font-weight: 500;
+    color: var(--color-dark);
+}
+.form-control1 input[type="file"]::file-selector-button {
+    border: none;
+    padding: 0.2em 0.4em;
+    background-color: var(--color-background);
+    /* transition: var(--transition); */
+}
+
+.form-control input[type="file"]::file-selector-button:hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    
+  }
+.bhindi{
+    width: 10rem;
+  }
+main .edit-product {
+    margin-top: 2rem;
+    background-color:red;
+}
+.edit-product form{
+    width: 40%;
+    padding: 3rem;
+}
+.edit-product .form-control{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+  
+
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!MEDIA QUERIES !!!!!!!!!!!!!!!!!!!!!! */
 
@@ -540,7 +593,6 @@ main .recent-updates .updates .update{
     display: none;
  }
 }
-
 /*!!!!!!!!!!!!!!!!!!!!!!!!!  MEDIA QUERIES!!!!!!!!!!!!!!!!!!!!!*/
 
 @media screen and (max-width: 768px) {
