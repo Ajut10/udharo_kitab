@@ -86,7 +86,7 @@ if(isset($_POST['edit'])){
             <label>Image</label>
             <img src="../images/<?= $data->image;?>" alt="" srcset="" width="200" class="bhindi">
             
-            <input type="file" name="image">
+            <input type="file" name="image" value="<?=$data->image;?>" >
         </div>
         <div class="form_control">
             

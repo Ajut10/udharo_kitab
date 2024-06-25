@@ -27,7 +27,7 @@
                     <tbody>
                          <?php foreach ($datalist as $row){?>
                         <tr>
-                            <td><?=$row['invoice_no'];?> </td>
+                            <td><?=$row['credit_no'];?> </td>
                             <td><?=$row['total_amount'];?></td>
                             <td><?=$row['credited_date'];?></td>
                             <td><a href="detailTrans.php?id=<?=$row['id'];?>"><span class="material-symbols-outlined">arrow_forward_ios</span></a></td>

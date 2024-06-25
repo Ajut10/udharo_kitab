@@ -18,12 +18,13 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#landing">Transactions</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                
+                <li><a href="#aboutus">About Us</a></li>
             </ul>
             <div class="icons">
-            <span class="material-symbols-outlined">person</span>
-            <span class="material-symbols-outlined">person</span>
+            <a href="page.php"><span class="material-symbols-outlined">person</span></a>
+            <!-- <span class="material-symbols-outlined">person</span> -->
+            <a href="../userprocess/userlogout.php">Logout</a>
             </div>
             <button><span class="material-symbols-outlined">menu</span></button>
             <button><span class="material-symbols-outlined">close</span></button>
@@ -46,10 +47,11 @@
         </div>
     </header>
     <?php include('transaction.php');?>
+    <?php include('aboutus.php');?>
     
     <script src="../javascript/main.js"></script>
   
-    <a href="../userprocess/userlogout.php">logout</a>
+   
 <?php
     include('../includes/footer.php');
 ?>

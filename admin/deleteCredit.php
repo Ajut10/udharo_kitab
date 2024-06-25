@@ -17,10 +17,10 @@ $status=$productObj->delete();
 // print_r($status);
     session_start();
     if($status =="success"){
-        $_SESSION['status']="Product deleted successfully";
+        $_SESSION['status']="Credit deleted successfully";
         header('location:listCredit.php');
     }else{
-        $_SESSION['status']=" Failed to Delete product";
+        $_SESSION['status']=" Failed to Delete credit";
         header('location:listCredit.php');
 
     }

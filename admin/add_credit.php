@@ -127,7 +127,7 @@ $datalist = $product->retrieve();
 
 
                     <h2>Customer Information</h2>
-
+                        <p id="errorcust" class="danger"></p>
 
 
                             <label for="">Customer Name</label>
@@ -174,7 +174,7 @@ $datalist = $product->retrieve();
       <script>
           $(document).ready(function(){
               $("#cust_name").autocomplete({
-                  source: "autocomplete.php",
+                  source: "../ajax/autocomplete.php",
                   minLength:1,
                   select:function(event, ui){
 

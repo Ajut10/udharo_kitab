@@ -29,9 +29,9 @@ include 'aside.php';
             
             <div class="sales">
                 <h4>Credit information</h4>
-                    <p>Credited no  : <?= $data->invoice_no?></p>
+                    <p>Credited no  : <?= $data->credit_no?></p>
                     <p>Credited Date :  <?= $data->credited_date?></p>
-                    <p>Phone :  <?= $data->id?></p>
+                    
                 
             </div>
             <div class="sales" >
@@ -69,12 +69,13 @@ include 'aside.php';
                         <tbody>
                             <?php foreach ($datalist as $product) {?>
                                 <tr>
-                                    
+                                    <?php $total=0; ?>
                                     <td><?=$product['p_name'] ?></td>
                                     <td><?=$product['p_rate'] ?></td>
                                     <td><?=$product['p_quantity'] ?></td>
-                                    <td><?=number_format($product['p_rate']*$product['p_quantity'])?></td>
-                                    <td><a href="editcredit.php?id=<?=$product['cp_id']?>&o_id=<?=$data->id?>">edit</a></td>
+                                    <?php $total=number_format($product['p_rate']*$product['p_quantity'])?>
+                                    <td><?=$total?></td>
+                                    <td><a href="editcredit.php?id=<?=$product['cp_id']?>&o_id=<?=$data->id?>&amount=<?= $data->total_amount?>&previous=<?=$total?>">edit</a></td>
                                 </tr>
                             <?php }?>
 

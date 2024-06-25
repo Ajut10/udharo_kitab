@@ -219,6 +219,10 @@ header .container{
     border-bottom: 1px solid var(--color-dark);
 }
 
+.transaction .trans1 table tr td img {
+    width: 7.8rem;
+}
+
 .transaction table tbody tr:last-child td{
     border: none;
 }
@@ -250,4 +254,22 @@ header .container{
 }
 .trans1 table tr td img{
     width: 1.8rem;
+}
+.page{
+    margin: 3rem;
+    /* padding: 7rem; */
+}
+.page .container{
+    display: flex;
+    flex-direction: column;
+    /* display: grid; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
+.container .profile{
+    display: flex;
+    flex-direction: column;
 }

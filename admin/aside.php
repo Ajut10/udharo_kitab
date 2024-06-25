@@ -35,7 +35,7 @@
                     <span class="material-symbols-outlined">note_add</span>
                     <h3>Credit</h3>
                 </a>
-                <a href="pp"class="side_link">
+                <!-- <a href="pp"class="side_link">
                     <span class="material-symbols-outlined">mail</span>
                     <h3>Message</h3>
                     <span class="message-count">72</span>
@@ -43,7 +43,7 @@
                 <a href="settings" class="side_link">
                     <span class="material-symbols-outlined">settings</span>
                     <h3>Settings</h3>
-                </a>
+                </a> -->
                 <a href="../logout.php">
                     <span class="material-symbols-outlined">logout</span>
                     <h3>Logout</h3>

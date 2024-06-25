@@ -33,7 +33,7 @@ include 'aside.php';
                 <tr>
                     <td><?=$credit['name']?></td>
                     <td><?=$credit['phone']?></td>
-                    <td><?=$credit['invoice_no']?></td>
+                    <td><?=$credit['credit_no']?></td>
                     <td><?=$credit['total_amount']?></td>
                     <td><?=$credit['credited_date']?></td>
                     <td><a href="listCredit_details.php?id=<?=$credit['id'];?>"><span class="material-symbols-outlined primary">info</span></a></td>

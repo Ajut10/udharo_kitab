@@ -10,15 +10,17 @@ include('../class/product_class.php');
 include '../class/credit_class.php';
 include '../class/credited_product_class.php';
 include ('../class/addtional_function.php');
+include('../database/database.php');
 include '../authentication.php';
 $product = new Product();
 $datalist=$product->retrieve();
 $id = $_GET['id'];
 $o_id=$_GET['o_id'];
+$previous=$_GET['previous'];
+$total_amount=$_GET['amount'];
 $credit_detailobj = new Credit_Detail();
 $credit_detailobj->set('cp_id', $id);
 $data = $credit_detailobj->getById();
-
 include 'aside.php';
 // print_r($data);
 if(isset($_POST['edit']))
@@ -28,8 +30,12 @@ if(isset($_POST['edit']))
  $credit_detailobj->set('p_id',$_POST['product_id']); 
  $credit_detailobj->set('p_rate',$_POST['rate']); 
  $credit_detailobj->set('p_quantity',$_POST['quantity']); 
+ $amount=number_format($_POST['rate']*$_POST['quantity']);
  $result=$credit_detailobj->edit();
  if($result){
+     $queryamount="update credit set total_amount=(('$total_amount'-'$previous')+'$amount') where id='$o_id'";
+    $conn->query($queryamount);
+     if($conn->affected_rows==1)
      redirect("listCredit.php","Sucessfully Updated");
     
     }else{

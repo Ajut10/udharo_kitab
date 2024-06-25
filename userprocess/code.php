@@ -42,7 +42,7 @@ function  sendmail_verify($name,$email,$verify_token){
 
 if(isset($_POST['register_btn'])){
     $name= $_POST["name"];
-    $password=$_POST["password"];
+    $password=md5($_POST["password"]);
     $phone=$_POST["phone"];
     $email=$_POST["email"];
     if($_FILES['image']['error']==0){

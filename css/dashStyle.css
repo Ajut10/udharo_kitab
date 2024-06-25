@@ -535,7 +535,7 @@ input{
   }
 main .edit-product {
     margin-top: 2rem;
-    background-color:red;
+    /* background-color:red; */
 }
 .edit-product form{
     width: 40%;

@@ -57,7 +57,7 @@ $(document).ready(function() {
 
         
         if(custname == ""){
-            document.write('customer name is required');
+            document.getElementById('errorcust').innerHTML="*Customer name is required";
             
             return false;
         }
@@ -99,7 +99,7 @@ $(document).ready(function() {
                 var res = JSON.parse(response);
                 if(res.status==200){
                     // alert("done");
-                    window.location.href="customer.php"
+                    window.location.href="listcredit.php"
                     console.log(res);
                 }else{
                     alert("error");

@@ -1,17 +1,19 @@
-var email = document.getElementById('email').value;
 function validation(){
+  
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
 
-    // if(email ==""){
-    //     // alert
-    //     document.getElementById("emailerror").innerHTML = "*Please enter your email ";
-    //     // alert("enter your email");
-    //     return false;
-    // }else{
+    if(email ==""){
+      
+        document.getElementById("emailerror").innerHTML = "*Please enter your email ";
+        
+        return false;
+    }else{
         var emailcheck= /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/;
-        if(emailcheck.match(email)){
+        if(emailcheck.test(email)){
     
             document.getElementById("emailerror").innerHTML = "" ;
-            // return true;
+            
             
         }else{
             document.getElementById("emailerror").innerHTML = "*Please enter a valid email address";
@@ -21,5 +23,9 @@ function validation(){
         
         
         
-    // }
+    }
+    if(password==""){
+        document.getElementById("passworderror").innerHTML = "*Please enter your password";
+        return false;
+    }
 }

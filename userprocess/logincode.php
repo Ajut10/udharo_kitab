@@ -6,7 +6,7 @@ if(isset($_POST['login_now_btn'])){
     if(!empty(trim($email = $_POST['email']))&& !empty(trim($password = $_POST['password']))){
     
         $email = mysqli_real_escape_string($conn,$_POST['email']);
-        $password=mysqli_real_escape_string($conn, $_POST['password']);
+        $password=mysqli_real_escape_string($conn, md5($_POST['password']));
 
         $login_query ="Select * from user where email='$email' and password='$password' limit 1";
         $login_query_run=mysqli_query($conn,$login_query);

@@ -14,13 +14,7 @@ include('../class/addtional_function.php');
 </head>
 <body>
 
-    <div class="alert">
-       
-        
-        <h4 id="alert1">
-            
-        </h4>
-    </div>
+    
 <section class="sign-in">
     <article class="sign-in_details">
         <h1>Register</h1>
@@ -34,20 +28,26 @@ include('../class/addtional_function.php');
                 
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" autocomplete="off" placeholder="Enter your name" >
+            <span id="nameerror"></span>
             </div>
-            
             <div class="form_control">
-                
-                <label for="password">Password</label>
-                
-                <input type="password" name="password" id="password"  placeholder="Enter the password">
+                   <label for="email">Email</label>
+                   <input type="email" name="email" id="email" placeholder="Enter your email">
+                   <span id="emailerror"></span>
+                   </div>
+                   <div class="form_control">
+                       
+                       <label for="password">Password</label>
+                       
+                       <input type="password" name="password" id="password"  placeholder="Enter the password">
+                       <span id="passworderror"></span>
             </div>
             <div class="form_control">
                 
                 <label for="phone">Phone</label>
                 
-                <input type="text" name="phone" id="phone" placeholder="Phone" >
-                
+                <input type="text" name="phone" id="phone" placeholder="Enter your Phone no" >
+                <span id="phoneerror"></span>
             </div>
             
             <div class="form_control">
@@ -55,12 +55,9 @@ include('../class/addtional_function.php');
                 <label for="Photo">Photo</label>
                 
                 <input type="file" name="image" id="image" placeholder="image">
-                
+                <span id="imgerror"></span>
             </div >
-            <div class="form_control">
-                   <label for="email">Email</label>
-                   <input type="email" name="email" id="email" placeholder="email">
-               </div>
+           
                
                
                    <button type="submit" name="register_btn" class="btn btn-dark">Register</button>
@@ -76,9 +73,9 @@ include('../class/addtional_function.php');
         <small class="next_page">Already have an account?</small> <a href="login.php">Sign in</a>
        
     </article>
-</section>
-
-<script src="../javascript/script.js"></script>
+    </section>
+    <script src="../javascript/script.js"></script>
+    
 <?php
 include "../includes/footer.php";
 ?>

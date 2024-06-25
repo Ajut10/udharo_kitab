@@ -98,7 +98,7 @@ if (isset($_POST['procedbtn'])) {
     if ($checkCustomer) {
         if (mysqli_num_rows($checkCustomer)) {
             $_SESSION['cust_name'] = $name;
-            $_SESSION['invoice_no'] = "CRE-" . rand(111111, 999999);
+            $_SESSION['credit_no'] = "CRE-" . rand(111111, 999999);
             $_SESSION['phone'] = $phone;
             
             jsonResponse(200,'sucess','Customer Found');
@@ -116,9 +116,9 @@ $creditedObj = new Credit_detail();
 
 if (isset($_POST['saveCredit'])) {
     // $_SESSION['invoice_no']="CRE-".rand(111111,999999);
-    $phone = validates($_SESSION['phone']);
-    $invoice_no = validates($_SESSION['invoice_no']);
-    $checkCustomer = mysqli_query($conn, "SELECT * FROM user where phone='$phone' limit 1");
+    $name = validates($_SESSION['cust_name']);
+    $invoice_no = validates($_SESSION['credit_no']);
+    $checkCustomer = mysqli_query($conn, "SELECT * FROM user where name='$name' limit 1");
     if (!$checkCustomer) {
         // jsonResponse(500,'error','something went wrong');
     }
@@ -157,8 +157,8 @@ if (isset($_POST['saveCredit'])) {
         unset($_SESSION['productitems']);
         unset($_SESSION['productitem_id']);
         unset($_SESSION['cust_name']);
-        unset($_SESSION['invoice_no']);
-        unset($_SESSION['invoice_no']);
+        unset($_SESSION['credit_no']);
+        
 
         jsonResponse(200, 'success', 'Sucessfully');
     } else {

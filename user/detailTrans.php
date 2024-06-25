@@ -15,8 +15,9 @@ $creditobj->set('id',$id);
 $data = $creditobj->getById();
 
 $credit_detailobj= new Credit_Detail();
-$credit_detailobj->set('id',$id);
+$credit_detailobj->set('order_id',$id);
 $datalist= $credit_detailobj->retrieve();
+
 
 
 
@@ -33,7 +34,7 @@ $datalist= $credit_detailobj->retrieve();
         <div class="trans">
                 <!-- <h2>Credit Detail</h2> -->
                 <h4>Credit information</h4>
-                    <p>Credited no  : <?= $data->invoice_no?></p>
+                    <p>Credited no  : <?= $data->credit_no?></p>
                     <p>Credited Date :  <?= $data->credited_date?></p>
                     <p>Phone :  <?= $data->phone?></p>
                 
@@ -71,18 +72,20 @@ $datalist= $credit_detailobj->retrieve();
                     </thead>
                     <tbody>
 
-                       <?php if(isset($datalist))?>
-                        <?php foreach ($datalist as $product) {?>
+                       <?php if(isset($datalist))
+                       
+                       foreach($datalist as $credits){
+                       ?>
                             <tr>
-                                <td><img src="../images/<?=$product['image']?>" alt=""></td>
-                                <td><?=$product['p_name'] ?></td>
-                                <td><?=$product['p_price'] ?></td>
-                                <td><?=$product['p_quantity'] ?></td>
-                                <td><?=number_format($product['p_price']*$product['p_quantity'])?></td>
-                            </tr>
+                                <td><img src="../images/<?=$credits['image']?>" alt=""></td>
+                                <td><?=$credits['p_name']?></td>
+                                <td><?=$credits['p_rate']?></td>
+                                <td><?=$credits['p_quantity']?></td>
+                                <td><?=number_format($credits['p_rate']*$credits['p_quantity'])?></td>
+                                
+                        </tr>       
+
                         <?php }?>
-
-
                         <tr>
                             <th colspan='4'>Total amount</th>
                             <td>Rs: <?= $data->total_amount?></td>

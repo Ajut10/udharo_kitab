@@ -28,12 +28,13 @@ if(isset($_SESSION['authenticate'])){
         <article class="sign-in_details">
              <h1>Sign In</h1>
              <p>Log in your account using your credentials</p>
-             <form  class="sign-in_form" action="logincode.php" method="post" onclick="return validation()">
+             <form  class="sign-in_form" action="logincode.php" method="post" onsubmit="return validation()" novalidate>
                  
              
              <div class="form_control">
                  <label for="email">Email</label>
                  <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                 <span id="emailerror"></span>
              </div>
              <div class="form_control">
      
@@ -41,9 +42,9 @@ if(isset($_SESSION['authenticate'])){
                  <input type="password" name="password" id="password" placeholder="Enter Your Password" >
              </div>
              
-             <div class="sign-in_extras">
+             <!-- <div class="sign-in_extras">
                  <a href="">Forgot Password?</a>
-             </div>
+             </div> -->
              
            
                  <button type="submit" name="login_now_btn" class="btn btn-dark">Login</button>
@@ -60,7 +61,7 @@ if(isset($_SESSION['authenticate'])){
         </article>
     </section>
 
-<script src="../javascript/script.js"></script>
+<script src="../javascript/login.js"></script>
 <?php
 include "../includes/footer.php";
 ?>

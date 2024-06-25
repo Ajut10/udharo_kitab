@@ -4,6 +4,7 @@
     $page_title="Dashboard";
     include('../includes/header.php');
     include('../class/user_class.php');
+    include('../class/addtional_function.php');
     
     $userObj= new User();
     $datalist= $userObj->retrieve();
@@ -15,8 +16,9 @@
    
         <main>
             <h1>Dashboard</h1>
+            <?php alertMessage();?>
             
-            <div class="insights">
+            <!-- <div class="insights">
                 <div class="sales">
                     <span class="material-symbols-outlined">analytics</span>
                     <div class="middle">
@@ -34,9 +36,9 @@
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
-                </div>
+                </div> -->
                 <!-------------END OF SALES----------->
-                <div class="recent-updates">
+                <!-- <div class="recent-updates">
                 <h2>Recent Update</h2>
                 <div class="updates">
                     <div class="update">
@@ -64,17 +66,17 @@
                 </div>
             </div>
                
-            </div>
+            </div> -->
             <!---------------------------END OF INSIGHTS --------------------->
             <div class="recent-order">
                 <h2>Customer</h2>
                 <table>
                     <thead>
                         <th>Name</th>
-                        <th>Number</th>
+                        <th>Phone Number</th>
                         <th>Email</th>
-                        <th>Status</th>
-                        <th></th>
+                        
+                       
                     </thead>
                     <tbody>
                         <?php foreach ($datalist as $user){ ?>
@@ -82,8 +84,8 @@
                             <td><?php echo  $user['name']; ?></td>
                             <td><?php echo $user['phone']; ?> </td>
                             <td><?php echo $user ['email']; ?></td>
-                            <td class="warning">Pending</td>
-                            <td class="primary">Details</td>
+                            
+                           
                         </tr>
                         <?php } ?>
                         

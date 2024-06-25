@@ -20,8 +20,31 @@ class User extends Common{
         
     }
     public function save(){}
-    public function delete(){}
-    public function edit(){}
+    public function delete(){
+        $conn=mysqli_connect('localhost','root','','kitab');
+        $sql="delete  from user where u_id='$this->id' ";
+        $var=$conn->query($sql);
+
+        if($var){
+            return "success";
+        }else{
+            return "failed";
+        }
+    }
+    public function edit(){
+
+    }
+    function getById(){
+        $conn=mysqli_connect('localhost','root','','kitab');
+        $sql="select * from user where u_id='$this->id' ";
+        $var=$conn->query($sql);
+        if($var->num_rows>0){
+            $data=$var->fetch_object();
+            return $data;
+        }else{
+            return [];
+        }
+    }
 
 }
 

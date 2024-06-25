@@ -11,11 +11,12 @@ if(!isset($_SESSION['productitems'])){
 
 <main>
     <div>
+    <button class="btn"><a href="add_credit.php" style="color: white;">Back</a></button>
     <h2>Summary of Credit Detail</h2>
     <h4>Customer Details</h4>    
     <p name="cust" >Customer Name: <?=$_SESSION['cust_name']; ?></p>
     <p>Customer Phone: <?= $_SESSION['phone']; ?></p>
-    <p>Invoice no: <?=$_SESSION['invoice_no'];?></p>
+    <p>Invoice no: <?=$_SESSION['credit_no'];?></p>
     <p>Date: <?php echo date("jS F Y"); ?></p>
 
     
@@ -26,61 +27,66 @@ if(!isset($_SESSION['productitems'])){
 
            
         
-
-
-
-        ?>    
-        <table border="2">
-            <thead>
-                <th>S.no</th>
-                <th>Item Name</th>
-                <th>Quantity</th>
-                <th>Rate</th>
-                <th>Total</th>
-            </thead>
-
-            <tbody>
-                <?php
-                $i=1;
-                $amount=0;
-                $totalamount=0;
-                foreach ($sessionProducts as $key=>$row){
+        if(empty($sessionProducts)){
+         echo "<p class='danger'>no credited items</p>";   
+        }
+        else{
+?>
+            <table border="2">
+                <thead>
+                    <th>S.no</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Total</th>
+                </thead>
+    
+                <tbody>
+                    <?php
+                    $i=1;
+                    $amount=0;
+                    $totalamount=0;
+                    foreach ($sessionProducts as $key=>$row){
+                        
+                        
+                    ?>
                     
-                    
-                ?>
-                
-                <tr>
-                    <td><?=$i++; ?></td>
-                    <td ><?=$row['name']; ?></td>
-                    <td><?=$row['quantity']; ?></td>
-                    <td><?=$row['price']; ?></td>
-                    <td><?=$amount=($row['quantity']*$row['price']); ?></td>
-                    
-                </tr>
-                <?php 
-                $totalamount+=$amount;
-                }
-                ?>
-                <tr>
-                    <th>Grand Total:</th>
-                    <th colspan="4"><?=$totalamount; ?></th>
-
-                </tr>
-            </tbody>
-        </table>
-        <?php
-                }
-                else {
-                    echo "no items added";
-                }
-        ?>
-        <?php
+                    <tr>
+                        <td><?=$i++; ?></td>
+                        <td ><?=$row['name']; ?></td>
+                        <td><?=$row['quantity']; ?></td>
+                        <td><?=$row['price']; ?></td>
+                        <td><?=$amount=($row['quantity']*$row['price']); ?></td>
+                        
+                    </tr>
+                    <?php 
+                    $totalamount+=$amount;
+                    }
+                    ?>
+                    <tr>
+                        <th colspan="3">Grand Total:</th>
+                        <th colspan="4"><?=$totalamount; ?></th>
+    
+                    </tr>
+                </tbody>
+            </table>
+            <?php
             if(isset($_SESSION['productitems'])):
         ?>
         <button type="button" name="saveCredit" id="saveCredit" class="btn">Save</button>
         <?php
             endif;
         ?>
+        <?php
+        }
+
+        
+                }
+                else {
+                    echo "no items added";
+                }
+        ?>
+        
     </div>
 </main>
 <!-- <script src="../javascript/jquery.js"></script> -->

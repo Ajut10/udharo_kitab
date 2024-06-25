@@ -22,7 +22,7 @@ if(isset($_SESSION['authenticated'])){
   
        <section class="sign-in">
            <article class="sign-in_details">
-               <h1>Login</h1>
+               <h1>Admin Login</h1>
                <p>Log in your account using your credentials</p>
                <form  class="sign-in_form" action="logincode.php" method="post" onsubmit="return validation()" novalidate>
                 <span><?php alertMessage();?></span>
@@ -37,11 +37,12 @@ if(isset($_SESSION['authenticated'])){
      
                  <label>Password</label>
                  <input type="password" name="password" id="password" placeholder="Enter your Password">
+                 <span id="passworderror"></span>
              </div>
              
-             <div class="sign-in_extras">
+             <!-- <div class="sign-in_extras">
                  <a href="">Forgot Password?</a>
-             </div>
+             </div> -->
              
            
                  <button type="submit" name="login_now_btn" class="btn btn-primary">Login</button>
